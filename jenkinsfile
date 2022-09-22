@@ -4,13 +4,9 @@ node {
         checkout scm
      }
      stage ('Build images'){
-        app = docker.build("tag1/httpd")
+        app = docker.build("monImage/httpd")
      }
-     stage ('Test image'){
-        withDockerContainer("tag1/httpd"){ 
-            sh "echo 'hello world'"
-            sh "hostname"
-            }
-            sh "docker ps"
+     stage ('show build images'){
+            sh "docker images"
             }
 }
