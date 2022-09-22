@@ -4,7 +4,7 @@ node {
         checkout scm
      }
      stage ('Build images'){
-        app = docker.build("monImage/httpd")
+        app = docker.build("monimage/httpd")
      }
      stage ('show build images'){
             sh "docker images"
